@@ -114,8 +114,8 @@ body {
 .hero-face {
   display: inline-block;
   width: 56px; height: 58px;
-  background-image: url('/rostros.jpg');
-  background-size: 336px 350px; /* 3× la escala original */
+  background-image: var(--asset-heroes);
+  background-size: 336px 350px;
   background-repeat: no-repeat;
   border-radius: 50%;
   image-rendering: auto;
@@ -152,7 +152,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('/base.png');
+  background-image: var(--asset-web);
   background-size: 520px 520px;
   background-position: center center;
   background-repeat: no-repeat;
@@ -191,7 +191,7 @@ body {
 }
 .menu-logo-web {
   width: 64px; height: 64px;
-  background-image: url('/base.png');
+  background-image: var(--asset-web);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -657,7 +657,7 @@ body {
 }
 .success-web {
   width: 80px; height: 80px;
-  background-image: url('/base.png');
+  background-image: var(--asset-web);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -716,7 +716,7 @@ body {
 .dialog-web-bg {
   position: absolute;
   inset: 0;
-  background-image: url('/base.png');
+  background-image: var(--asset-web);
   background-size: 300px;
   background-position: center;
   background-repeat: no-repeat;
@@ -859,6 +859,8 @@ body {
    RESPONSIVE — móvil
 ══════════════════════════════════════════════════════════════════ */
 @media (max-width: 767px) {
+  body { min-width: 320px; min-height: 100dvh; }
+  #app { min-height: 100dvh; }
   .split-area { flex-direction: column; }
   .divider {
     width: 100% !important;
@@ -866,8 +868,10 @@ body {
     cursor: row-resize !important;
   }
   .divider::after { content: '···'; }
-  .editor-wrapper, .preview-wrapper { flex: 1 !important; }
-  .preview-iframe { max-height: 200px; }
+  .editor-wrapper, .preview-wrapper { flex: 1 1 0 !important; min-height: 0; width: 100%; }
+  .preview-iframe { max-height: min(34dvh, 240px); }
+  .menu-card { width: min(100% - 24px, 480px); }
+  .level-grid { grid-template-columns: repeat(auto-fill, minmax(136px, 1fr)); }
   .menu-card { padding: 32px 24px 28px; }
   .menu-title { font-size: 32px; }
   .dialog-content { padding: 28px 20px; }

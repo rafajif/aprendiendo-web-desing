@@ -1,6 +1,7 @@
 import type { Level } from "../../types/level";
 import { buildSrcdoc } from "../../services/SandboxRenderer";
 import { checkCompletionLive } from "../../services/CompletionCheck";
+import { getWebDataUrl, getHeroesDataUrl } from "../../services/AssetLoader";
 
 export class PreviewPane extends HTMLElement {
   private iframe!: HTMLIFrameElement;
@@ -73,7 +74,7 @@ export class PreviewPane extends HTMLElement {
         content: '';
         position: absolute;
         inset: 0;
-        background-image: url('/base.png');
+        background-image: url('${getWebDataUrl()}');
         background-size: 220px 220px;
         background-position: center;
         background-repeat: no-repeat;
@@ -93,7 +94,7 @@ export class PreviewPane extends HTMLElement {
         justify-content: center;
         width: 48px;
         height: 48px;
-        background-image: url('/rostros.jpg');
+        background-image: url('${getHeroesDataUrl()}');
         background-size: 288px 300px;
         background-repeat: no-repeat;
         border-radius: 50%;

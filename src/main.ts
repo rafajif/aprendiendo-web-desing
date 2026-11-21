@@ -13,40 +13,47 @@ import { GameShell } from "./components/game-shell/GameShell";
 import { Settings } from "./components/settings/Settings";
 import { i18n } from "./services/I18nEngine";
 import { themeService } from "./services/ThemeService";
+import { preloadGameAssets, assetUrl } from "./services/AssetLoader";
 
 async function bootstrap(): Promise<void> {
   // Apply saved theme first (no flash)
   themeService.load();
 
+  // Preload images as base64 so the srcdoc iframe can use them
+  try {
+    await preloadGameAssets();
+  } catch (e) {
+    console.warn("[Assets] Could not preload game assets:", e);
+  }
+
   // Load translations
   await i18n.init();
+
+  // Inject correct asset URLs into CSS custom properties so the
+  // host page (menu, level-select etc.) also uses the right paths
+  document.documentElement.style.setProperty(
+    "--asset-web", `url('${assetUrl("base.png")}')`
+  );
+  document.documentElement.style.setProperty(
+    "--asset-heroes", `url('${assetUrl("rostros.jpg")}')`
+  );
 
   const app = document.getElementById("app")!;
   const router = new Router(app);
 
-  router.register("/", () => {
-    const el = new MainMenu();
-    return el;
-  });
+  router.register("/", () => new MainMenu());
 
-  router.register("/levels", () => {
-    const el = new LevelSelect();
-    return el;
-  });
+  router.register("/levels", () => new LevelSelect());
 
   router.register("/play/:chapterId/:levelId", (params) => {
     const shell = new GameShell();
-    // Load level after element is in DOM
     requestAnimationFrame(() => {
       shell.loadLevel(params.chapterId ?? "", params.levelId ?? "");
     });
     return shell;
   });
 
-  router.register("/settings", () => {
-    const el = new Settings();
-    return el;
-  });
+  router.register("/settings", () => new Settings());
 
   router.start();
 }

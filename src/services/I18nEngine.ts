@@ -1,24 +1,25 @@
 import type { TranslationMap } from "../types/i18n";
 import { progressStore } from "./ProgressStore";
+import { assetUrl } from "./AssetLoader";
 
 const SUPPORTED_LOCALES = ["en", "es"];
 
 class I18nEngine {
-  private locale: string = "en";
+  private locale: string = "es";
   private translations: TranslationMap = {};
 
   async init(): Promise<void> {
     const saved = progressStore.getData().selectedLocale;
     // Default to Spanish since the game is primarily in Spanish
-    const detected = this.detectBrowserLocale();
-    const locale = saved || detected || "es";
+    // Start in Spanish by default; keep a language the player selected before.
+    const locale = saved || "es";
     await this.setLocale(locale);
   }
 
   async setLocale(locale: string): Promise<void> {
     const target = SUPPORTED_LOCALES.includes(locale) ? locale : "en";
     try {
-      const res = await fetch(`/locales/${target}.json`);
+      const res = await fetch(assetUrl(`locales/${target}.json`));
       if (!res.ok) throw new Error(`Failed to load locale ${target}`);
       this.translations = (await res.json()) as TranslationMap;
       this.locale = target;
