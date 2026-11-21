@@ -1,0 +1,107 @@
+/* ══════════════════════════════════════════════════════
+   TEMA HÉROE (default) — rojo/azul Marvel
+══════════════════════════════════════════════════════ */
+:root,
+[data-theme="hero"] {
+  --color-bg:              #0d0d1a;
+  --color-bg2:             #12122a;
+  --color-surface:         #1a1a35;
+  --color-surface2:        #22224a;
+  --color-border:          #2e2e60;
+  --color-text:            #f0f0ff;
+  --color-text-dim:        #a0a0cc;
+  --color-muted:           #6060a0;
+  --color-primary:         #e53935;
+  --color-primary-dark:    #b71c1c;
+  --color-primary-glow:    rgba(229,57,53,0.35);
+  --color-accent:          #1565c0;
+  --color-accent-light:    #42a5f5;
+  --color-focus:           #42a5f5;
+  --color-shadow:          rgba(0,0,0,0.6);
+  --color-editor-bg:       #0d0d1a;
+  --color-preview-bg:      #12122a;
+  --color-divider:         #2e2e60;
+  --color-hint-bg:         #1a2a4a;
+  --color-hint-text:       #90caf9;
+  --color-info-bg:         #1a1a35;
+  --color-info-border:     #2e2e60;
+  --color-info-text:       #c5cae9;
+  --color-success:         #43a047;
+  --color-success-bg:      #0a2010;
+  --color-success-text:    #a5d6a7;
+  --color-success-border:  #2e7d32;
+  --color-star:            #ffd600;
+  --color-web:             rgba(255,255,255,0.08);
+
+  /* Spider-web background gradient */
+  --bg-gradient: radial-gradient(ellipse at 20% 50%, #1a0a2e 0%, #0d0d1a 60%),
+                 radial-gradient(ellipse at 80% 10%, #0a1a3e 0%, transparent 60%);
+}
+
+/* ── Oscuro urbano ─── */
+[data-theme="dark"] {
+  --color-bg:              #0a0a0a;
+  --color-bg2:             #111111;
+  --color-surface:         #1c1c1c;
+  --color-surface2:        #242424;
+  --color-border:          #333333;
+  --color-text:            #f5f5f5;
+  --color-text-dim:        #aaaaaa;
+  --color-muted:           #666666;
+  --color-primary:         #ff6f00;
+  --color-primary-dark:    #e65100;
+  --color-primary-glow:    rgba(255,111,0,0.3);
+  --color-accent:          #37474f;
+  --color-accent-light:    #90a4ae;
+  --color-focus:           #ff8f00;
+  --color-shadow:          rgba(0,0,0,0.7);
+  --color-editor-bg:       #0a0a0a;
+  --color-preview-bg:      #111111;
+  --color-divider:         #333333;
+  --color-hint-bg:         #1a1a1a;
+  --color-hint-text:       #ffcc80;
+  --color-info-bg:         #1a1a1a;
+  --color-info-border:     #333333;
+  --color-info-text:       #cccccc;
+  --color-success:         #66bb6a;
+  --color-success-bg:      #0a1a0a;
+  --color-success-text:    #a5d6a7;
+  --color-success-border:  #2e7d32;
+  --color-star:            #ffd600;
+  --color-web:             rgba(255,255,255,0.05);
+  --bg-gradient: none;
+}
+
+/* ── Clásico claro ─── */
+[data-theme="light"] {
+  --color-bg:              #f0f4ff;
+  --color-bg2:             #e8eeff;
+  --color-surface:         #ffffff;
+  --color-surface2:        #f8f9ff;
+  --color-border:          #d0d8f0;
+  --color-text:            #1a1a3a;
+  --color-text-dim:        #4a5080;
+  --color-muted:           #8890b0;
+  --color-primary:         #c62828;
+  --color-primary-dark:    #8e0000;
+  --color-primary-glow:    rgba(198,40,40,0.2);
+  --color-accent:          #1565c0;
+  --color-accent-light:    #1976d2;
+  --color-focus:           #1976d2;
+  --color-shadow:          rgba(0,0,0,0.15);
+  --color-editor-bg:       #1a1a2e;
+  --color-preview-bg:      #f0f4ff;
+  --color-divider:         #d0d8f0;
+  --color-hint-bg:         #e3f2fd;
+  --color-hint-text:       #0d47a1;
+  --color-info-bg:         #e8eaf6;
+  --color-info-border:     #c5cae9;
+  --color-info-text:       #283593;
+  --color-success:         #2e7d32;
+  --color-success-bg:      #e8f5e9;
+  --color-success-text:    #1b5e20;
+  --color-success-border:  #a5d6a7;
+  --color-star:            #f9a825;
+  --color-web:             rgba(0,0,0,0.04);
+  --bg-gradient: none;
+}

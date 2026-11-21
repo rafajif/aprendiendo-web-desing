@@ -1,0 +1,25 @@
+{
+  "id": "02-02",
+  "chapterId": "grid",
+  "titleKey": "level.grid.02-02.title",
+  "instructionKey": "level.grid.02-02.instruction",
+  "scaffoldHTML": "<div class=\"container\"><div class=\"box box-wide\">📦</div><div class=\"box\">📦</div><div class=\"box\">📦</div></div>",
+  "initialCSS": ".container {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n}\n.box-wide {\n  /* add grid-column here */\n}",
+  "solution": ".container { display: grid; grid-template-columns: repeat(3, 1fr); } .box-wide { grid-column: span 2; }",
+  "targets": [
+    {
+      "selector": ".box-wide",
+      "expectedCenterX": 107,
+      "expectedCenterY": 20,
+      "expectedWidth": 214,
+      "expectedHeight": 40,
+      "tolerance": 12
+    }
+  ],
+  "hints": [
+    "hint.property.grid-column",
+    "hint.declaration.grid-column-span2",
+    ".container {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n}\n.box-wide {\n  grid-column: span 2;\n}"
+  ],
+  "tags": ["grid", "grid-column"]
+}

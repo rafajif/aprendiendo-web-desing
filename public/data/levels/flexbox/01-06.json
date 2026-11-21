@@ -1,0 +1,41 @@
+{
+  "id": "01-06",
+  "chapterId": "flexbox",
+  "titleKey": "level.flexbox.01-06.title",
+  "instructionKey": "level.flexbox.01-06.instruction",
+  "scaffoldHTML": "<div class=\"container\"><div class=\"frog\">🐸</div><div class=\"frog\">🐸</div><div class=\"frog\">🐸</div></div>",
+  "initialCSS": ".container {\n  display: flex;\n  height: 160px;\n  /* add flex-direction here */\n}",
+  "solution": ".container { display: flex; height: 160px; flex-direction: column; }",
+  "targets": [
+    {
+      "selector": ".frog:nth-child(1)",
+      "expectedCenterX": 20,
+      "expectedCenterY": 20,
+      "expectedWidth": 40,
+      "expectedHeight": 40,
+      "tolerance": 8
+    },
+    {
+      "selector": ".frog:nth-child(2)",
+      "expectedCenterX": 20,
+      "expectedCenterY": 60,
+      "expectedWidth": 40,
+      "expectedHeight": 40,
+      "tolerance": 8
+    },
+    {
+      "selector": ".frog:nth-child(3)",
+      "expectedCenterX": 20,
+      "expectedCenterY": 100,
+      "expectedWidth": 40,
+      "expectedHeight": 40,
+      "tolerance": 8
+    }
+  ],
+  "hints": [
+    "hint.property.flex-direction",
+    "hint.declaration.flex-direction-column",
+    ".container {\n  display: flex;\n  height: 160px;\n  flex-direction: column;\n}"
+  ],
+  "tags": ["flexbox", "flex-direction"]
+}

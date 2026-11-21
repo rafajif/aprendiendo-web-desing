@@ -1,0 +1,33 @@
+{
+  "id": "02-04",
+  "chapterId": "grid",
+  "titleKey": "level.grid.02-04.title",
+  "instructionKey": "level.grid.02-04.instruction",
+  "scaffoldHTML": "<div class=\"container\"><div class=\"box\">📦</div><div class=\"box\">📦</div><div class=\"box\">📦</div></div>",
+  "initialCSS": ".container {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  /* add justify-items here */\n}\n.box { width: 40px; }",
+  "solution": ".container { display: grid; grid-template-columns: repeat(3, 1fr); justify-items: center; } .box { width: 40px; }",
+  "targets": [
+    {
+      "selector": ".box:nth-child(1)",
+      "expectedCenterX": 54,
+      "expectedCenterY": 20,
+      "expectedWidth": 40,
+      "expectedHeight": 40,
+      "tolerance": 10
+    },
+    {
+      "selector": ".box:nth-child(2)",
+      "expectedCenterX": 161,
+      "expectedCenterY": 20,
+      "expectedWidth": 40,
+      "expectedHeight": 40,
+      "tolerance": 10
+    }
+  ],
+  "hints": [
+    "hint.property.justify-items",
+    "hint.declaration.justify-items-center",
+    ".container {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  justify-items: center;\n}\n.box { width: 40px; }"
+  ],
+  "tags": ["grid", "justify-items"]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "01-09",
+  "chapterId": "flexbox",
+  "titleKey": "level.flexbox.01-09.title",
+  "instructionKey": "level.flexbox.01-09.instruction",
+  "scaffoldHTML": "<div class=\"container\"><div class=\"frog frog-green\">🐸</div><div class=\"frog frog-red\">🔴</div></div>",
+  "initialCSS": ".container {\n  display: flex;\n}\n.frog-red {\n  /* add order here */\n}",
+  "solution": ".container { display: flex; } .frog-red { order: -1; }",
+  "targets": [
+    {
+      "selector": ".frog-red",
+      "expectedCenterX": 20,
+      "expectedCenterY": 80,
+      "expectedWidth": 40,
+      "expectedHeight": 40,
+      "tolerance": 8
+    },
+    {
+      "selector": ".frog-green",
+      "expectedCenterX": 60,
+      "expectedCenterY": 80,
+      "expectedWidth": 40,
+      "expectedHeight": 40,
+      "tolerance": 8
+    }
+  ],
+  "hints": [
+    "hint.property.order",
+    "hint.declaration.order-last",
+    ".container {\n  display: flex;\n}\n.frog-red {\n  order: -1;\n}"
+  ],
+  "tags": ["flexbox", "order"]
+}

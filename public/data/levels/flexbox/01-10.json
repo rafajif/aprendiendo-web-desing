@@ -1,0 +1,33 @@
+{
+  "id": "01-10",
+  "chapterId": "flexbox",
+  "titleKey": "level.flexbox.01-10.title",
+  "instructionKey": "level.flexbox.01-10.instruction",
+  "scaffoldHTML": "<div class=\"container\"><div class=\"frog\">🐸</div><div class=\"frog\">🐸</div><div class=\"frog\">🐸</div><div class=\"frog\">🐸</div></div>",
+  "initialCSS": ".container {\n  display: flex;\n  flex-wrap: wrap;\n  height: 160px;\n  width: 100px;\n  /* add align-content here */\n}\n.frog { flex-shrink: 0; }",
+  "solution": ".container { display: flex; flex-wrap: wrap; height: 160px; width: 100px; align-content: space-between; } .frog { flex-shrink: 0; }",
+  "targets": [
+    {
+      "selector": ".frog:nth-child(1)",
+      "expectedCenterX": 20,
+      "expectedCenterY": 20,
+      "expectedWidth": 40,
+      "expectedHeight": 40,
+      "tolerance": 10
+    },
+    {
+      "selector": ".frog:nth-child(3)",
+      "expectedCenterX": 20,
+      "expectedCenterY": 140,
+      "expectedWidth": 40,
+      "expectedHeight": 40,
+      "tolerance": 10
+    }
+  ],
+  "hints": [
+    "hint.property.align-content",
+    "hint.declaration.align-content-space-between",
+    ".container {\n  display: flex;\n  flex-wrap: wrap;\n  height: 160px;\n  width: 100px;\n  align-content: space-between;\n}\n.frog { flex-shrink: 0; }"
+  ],
+  "tags": ["flexbox", "align-content"]
+}

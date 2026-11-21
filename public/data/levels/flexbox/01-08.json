@@ -1,0 +1,25 @@
+{
+  "id": "01-08",
+  "chapterId": "flexbox",
+  "titleKey": "level.flexbox.01-08.title",
+  "instructionKey": "level.flexbox.01-08.instruction",
+  "scaffoldHTML": "<div class=\"container\"><div class=\"frog\">🐸</div><div class=\"frog\">🐸</div><div class=\"frog frog-last\">🐸</div></div>",
+  "initialCSS": ".container {\n  display: flex;\n  height: 160px;\n  align-items: flex-start;\n}\n.frog-last {\n  /* add align-self here */\n}",
+  "solution": ".container { display: flex; height: 160px; align-items: flex-start; } .frog-last { align-self: flex-end; }",
+  "targets": [
+    {
+      "selector": ".frog-last",
+      "expectedCenterX": 100,
+      "expectedCenterY": 140,
+      "expectedWidth": 40,
+      "expectedHeight": 40,
+      "tolerance": 10
+    }
+  ],
+  "hints": [
+    "hint.property.align-self",
+    "hint.declaration.align-self-flex-end",
+    ".container {\n  display: flex;\n  height: 160px;\n  align-items: flex-start;\n}\n.frog-last {\n  align-self: flex-end;\n}"
+  ],
+  "tags": ["flexbox", "align-self"]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "01-05",
+  "chapterId": "flexbox",
+  "titleKey": "level.flexbox.01-05.title",
+  "instructionKey": "level.flexbox.01-05.instruction",
+  "scaffoldHTML": "<div class=\"container\"><div class=\"frog\">🐸</div></div>",
+  "initialCSS": ".container {\n  display: flex;\n  height: 160px;\n  /* add justify-content and align-items */\n}",
+  "solution": ".container { display: flex; height: 160px; justify-content: center; align-items: center; }",
+  "targets": [
+    {
+      "selector": ".frog",
+      "expectedCenterX": 160,
+      "expectedCenterY": 80,
+      "expectedWidth": 40,
+      "expectedHeight": 40,
+      "tolerance": 8
+    }
+  ],
+  "hints": [
+    "hint.property.justify-content",
+    "hint.declaration.align-items-center",
+    ".container {\n  display: flex;\n  height: 160px;\n  justify-content: center;\n  align-items: center;\n}"
+  ],
+  "tags": ["flexbox", "justify-content", "align-items"]
+}

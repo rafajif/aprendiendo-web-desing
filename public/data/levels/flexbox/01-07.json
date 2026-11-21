@@ -1,0 +1,25 @@
+{
+  "id": "01-07",
+  "chapterId": "flexbox",
+  "titleKey": "level.flexbox.01-07.title",
+  "instructionKey": "level.flexbox.01-07.instruction",
+  "scaffoldHTML": "<div class=\"container\"><div class=\"frog\">🐸</div><div class=\"frog\">🐸</div><div class=\"frog\">🐸</div><div class=\"frog\">🐸</div><div class=\"frog\">🐸</div></div>",
+  "initialCSS": ".container {\n  display: flex;\n  width: 160px;\n  /* add flex-wrap here */\n}\n.frog { flex-shrink: 0; }",
+  "solution": ".container { display: flex; width: 160px; flex-wrap: wrap; } .frog { flex-shrink: 0; }",
+  "targets": [
+    {
+      "selector": ".frog:nth-child(5)",
+      "expectedCenterX": 20,
+      "expectedCenterY": 60,
+      "expectedWidth": 40,
+      "expectedHeight": 40,
+      "tolerance": 10
+    }
+  ],
+  "hints": [
+    "hint.property.flex-wrap",
+    "hint.declaration.flex-wrap-wrap",
+    ".container {\n  display: flex;\n  width: 160px;\n  flex-wrap: wrap;\n}\n.frog { flex-shrink: 0; }"
+  ],
+  "tags": ["flexbox", "flex-wrap"]
+}

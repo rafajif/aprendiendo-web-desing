@@ -1,0 +1,25 @@
+{
+  "id": "02-03",
+  "chapterId": "grid",
+  "titleKey": "level.grid.02-03.title",
+  "instructionKey": "level.grid.02-03.instruction",
+  "scaffoldHTML": "<div class=\"container\"><div class=\"box\">📦</div><div class=\"box\">📦</div><div class=\"box\">📦</div></div>",
+  "initialCSS": ".container {\n  display: grid;\n  grid-template-columns: repeat(3, 80px);\n  /* add gap here */\n}",
+  "solution": ".container { display: grid; grid-template-columns: repeat(3, 80px); gap: 16px; }",
+  "targets": [
+    {
+      "selector": ".box:nth-child(2)",
+      "expectedCenterX": 136,
+      "expectedCenterY": 20,
+      "expectedWidth": 80,
+      "expectedHeight": 40,
+      "tolerance": 10
+    }
+  ],
+  "hints": [
+    "hint.property.gap",
+    "hint.declaration.gap-16",
+    ".container {\n  display: grid;\n  grid-template-columns: repeat(3, 80px);\n  gap: 16px;\n}"
+  ],
+  "tags": ["grid", "gap"]
+}
